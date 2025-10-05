@@ -1,0 +1,5 @@
+D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.GeneratedMSBuildEditorConfig.editorconfig
+D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.AssemblyInfoInputs.cache
+D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.AssemblyInfo.cs
+D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.csproj.CoreCompileInputs.cache
+D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.sourcelink.json
