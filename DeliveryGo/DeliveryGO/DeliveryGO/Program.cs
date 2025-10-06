@@ -16,6 +16,7 @@ class Program
     static void Main(string[] args)
     {
         InicializarSistema();
+        PruebaRapida();
         MostrarMenuPrincipal();
     }
 
@@ -48,6 +49,27 @@ class Program
         Console.WriteLine($"IVA: {ConfigManager.Instance.IVA:P2}");
         Console.WriteLine();
     }
+
+    static void PruebaRapida()
+{
+    Console.WriteLine("\n=== PRUEBA RÁPIDA DEL CARRITO ===");
+    
+    // Probar agregar item directamente
+    Console.WriteLine("Agregando ítem de prueba...");
+    _facade.AgregarItem("TEST001", "Producto Prueba", 1000m, 2);
+    
+    // Verificar inmediatamente
+    var items = _carrito.GetItemsSnapshot();
+    Console.WriteLine($"Ítems en carrito: {items.Count}");
+    
+    foreach (var item in items)
+    {
+        Console.WriteLine($" - {item.Nombre}: {item.Cantidad} x ${item.Precio}");
+    }
+    
+    Console.WriteLine($"Subtotal: ${_carrito.Subtotal()}");
+    Console.WriteLine("=== FIN PRUEBA ===\n");
+}
 
     static void MostrarMenuPrincipal()
     {
@@ -142,31 +164,30 @@ class Program
     }
 
     static void MostrarResumen()
+{
+    Console.WriteLine("\n--- RESUMEN DE COMPRA ---");
+    
+    var items = _carrito.GetItemsSnapshot();
+    if (!items.Any())
     {
-        Console.WriteLine("\n--- RESUMEN DE COMPRA ---");
-
-        var items = _carrito.GetItemsSnapshot();
-        if (!items.Any())
-        {
-            Console.WriteLine("Carrito vacío");
-            return;
-        }
-
-        Console.WriteLine("Ítems en carrito:");
-        foreach (var item in items)
-        {
-            Console.WriteLine($"  {item.Nombre} (x{item.Cantidad}) - ${item.Precio * item.Cantidad}");
-        }
-
-        var subtotal = _carrito.Subtotal();
-        var total = _facade.CalcularTotal();
-        var costoEnvio = total - subtotal;
-
-        Console.WriteLine($"\nSubtotal: ${subtotal}");
-        Console.WriteLine($"Costo de envío: ${costoEnvio}");
-        Console.WriteLine($"TOTAL: ${total}");
+        Console.WriteLine("Carrito vacío");
+        return;
     }
 
+    Console.WriteLine("Ítems en carrito:");
+    foreach (var item in items)
+    {
+        Console.WriteLine($"  {item.Nombre} (x{item.Cantidad}) - ${item.Precio * item.Cantidad}");
+    }
+
+    var subtotal = _carrito.Subtotal();
+    var total = _facade.CalcularTotal();
+    var costoEnvio = total - subtotal;
+
+    Console.WriteLine($"\nSubtotal: ${subtotal}");
+    Console.WriteLine($"Costo de envío: ${costoEnvio}");
+    Console.WriteLine($"TOTAL: ${total}");
+}
     static void Undo()
     {
         _carrito.Undo();

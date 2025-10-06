@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DeliveryGo.Envios
+namespace DeliveryGO.Core.Strategy
 {
     public interface IEnvioStrategy
     {

@@ -1,8 +1,7 @@
-﻿using System;
+﻿using DeliveryGo.Core.Order;
+using DeliveryGO.Core.Command;
 
-using DeliveryGo.Core.Command;
-
-namespace DeliveryGo.Core.Order;
+namespace DeliveryGO.Core.Order;
 
 public interface IPedidoBuilder
 {
@@ -10,7 +9,7 @@ public interface IPedidoBuilder
     IPedidoBuilder ConDireccion(string direccion);
     IPedidoBuilder ConMetodoPago(string tipoPago);
     IPedidoBuilder ConMonto(decimal monto);
-    Pedido Build();
+    DeliveryGo.Core.Order.Pedido Build();
 }
 
 public class PedidoBuilder : IPedidoBuilder
@@ -50,20 +49,23 @@ public class PedidoBuilder : IPedidoBuilder
     {
         if (!_items.Any())
             throw new InvalidOperationException("El pedido debe tener al menos un ítem");
-
+        
         if (string.IsNullOrWhiteSpace(_direccion))
             throw new InvalidOperationException("El pedido debe tener una dirección");
+
+        // Crear los items del pedido
+        var itemsDelPedido = _items.Select(static i => new Item
+        { 
+            Sku = i.sku, 
+            Nombre = i.nombre, 
+            Precio = i.precio, 
+            Cantidad = i.cantidad 
+        }).ToList();
 
         return new Pedido
         {
             Id = _nextId++,
-            Items = _items.Select(i => new Item
-            {
-                Sku = i.sku,
-                Nombre = i.nombre,
-                Precio = i.precio,
-                Cantidad = i.cantidad
-            }).ToList(),
+            Items = itemsDelPedido,
             Direccion = _direccion,
             TipoPago = _tipoPago,
             Monto = _monto,

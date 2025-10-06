@@ -1,19 +1,19 @@
-﻿using System;
-
-namespace DeliveryGO.Core.Command;
+﻿namespace DeliveryGO.Core.Command;
 
 public class CarritoPort : ICarritoPort
 {
     private readonly Carrito _carrito = new();
     private readonly EditorCarrito _editor = new();
 
+    // Propiedad pública para acceder al carrito real
+    public Carrito CarritoInterno => _carrito;
+
     public decimal Subtotal() => _carrito.Subtotal();
 
-    public void Run(ICommand cmd)
-    {
+    public void Run(ICommand cmd) 
+    { 
         _editor.Run(cmd);
-        // Sincronizar el estado del carrito interno con los commands
-        // En una implementación real, los commands trabajarían directamente con este carrito
+        // Los commands ahora trabajan con este mismo carrito
     }
 
     public void Undo() => _editor.Undo();

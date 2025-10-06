@@ -1,7 +1,7 @@
 ﻿using System;
-using DeliveryGo.Envios;
 
-namespace Core.Strategy
+
+namespace DeliveryGO.Core.Strategy
 {
     public class EnvioMoto : IEnvioStrategy
     {

@@ -1,5 +1,5 @@
-﻿using System;
-
+﻿using DeliveryGO.Core.Order;
+using System;
 namespace DeliveryGO.Core.Order;
 
 public class PedidoChangedEventArgs : EventArgs

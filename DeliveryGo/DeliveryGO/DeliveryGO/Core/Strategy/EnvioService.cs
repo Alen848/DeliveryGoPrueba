@@ -1,22 +1,21 @@
-﻿using System;
-using DeliveryGo.Envios;
-namespace DeliveryGo.Envios;
+﻿namespace DeliveryGO.Core.Strategy;
 
 public class EnvioService
 {
     private IEnvioStrategy _actual;
 
-    public void SetStrategy(IEnvioStrategy strategy)
+    // Constructor corregido - inicializar _actual
+    public EnvioService(IEnvioStrategy estrategiaInicial)
     {
-        _actual = strategy;
+        _actual = estrategiaInicial;
     }
 
-    public decimal Calcular(decimal subtotal)
+    public void SetStrategy(IEnvioStrategy estrategia)
     {
-        if (_actual == null)
-            throw new InvalidOperationException("No se ha definido una estrategia de envío.");
-        return _actual.Calcular(subtotal);
+        _actual = estrategia;
     }
 
-    public string NombreActual => _actual?.Nombre;
+    public decimal Calcular(decimal subtotal) => _actual?.Calcular(subtotal) ?? 0m;
+
+    public string NombreActual => _actual?.Nombre ?? "No definido";
 }

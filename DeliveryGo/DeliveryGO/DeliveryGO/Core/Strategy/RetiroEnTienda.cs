@@ -1,6 +1,6 @@
 ﻿using System;
-using DeliveryGo.Envios;
-namespace DeliveryGo.Envios
+
+namespace DeliveryGO.Core.Strategy
 {
     public class RetiroEnTienda : IEnvioStrategy
     {

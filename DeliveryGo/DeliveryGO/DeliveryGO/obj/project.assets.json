@@ -8,26 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {}
+    "/Users/brunososav/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DeliveryGo\\DeliveryGO\\DeliveryGO\\DeliveryGO.csproj",
+      "projectUniqueName": "/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/DeliveryGO.csproj",
       "projectName": "DeliveryGO",
-      "projectPath": "D:\\DeliveryGo\\DeliveryGO\\DeliveryGO\\DeliveryGO.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\DeliveryGo\\DeliveryGO\\DeliveryGO\\obj\\",
+      "projectPath": "/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/DeliveryGO.csproj",
+      "packagesPath": "/Users/brunososav/.nuget/packages/",
+      "outputPath": "/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/brunososav/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -66,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

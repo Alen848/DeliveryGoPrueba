@@ -1,5 +1,20 @@
-D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.GeneratedMSBuildEditorConfig.editorconfig
-D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.AssemblyInfoInputs.cache
-D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.AssemblyInfo.cs
-D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.csproj.CoreCompileInputs.cache
-D:\DeliveryGo\DeliveryGO\DeliveryGO\obj\Debug\net8.0\DeliveryGO.sourcelink.json
+D:/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.GeneratedMSBuildEditorConfig.editorconfig
+D:/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.AssemblyInfoInputs.cache
+D:/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.AssemblyInfo.cs
+D:/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.csproj.CoreCompileInputs.cache
+D:/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.sourcelink.json
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.GeneratedMSBuildEditorConfig.editorconfig
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.AssemblyInfoInputs.cache
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.AssemblyInfo.cs
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.csproj.CoreCompileInputs.cache
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.sourcelink.json
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/bin/Debug/net8.0/DeliveryGO
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/bin/Debug/net8.0/DeliveryGO.deps.json
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/bin/Debug/net8.0/DeliveryGO.runtimeconfig.json
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/bin/Debug/net8.0/DeliveryGO.dll
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/bin/Debug/net8.0/DeliveryGO.pdb
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.dll
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/refint/DeliveryGO.dll
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.pdb
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/DeliveryGO.genruntimeconfig.cache
+/Users/brunososav/Programacion Bruno/Prueba DeliveryGo/DeliveryGoPrueba/DeliveryGo/DeliveryGO/DeliveryGO/obj/Debug/net8.0/ref/DeliveryGO.dll

@@ -1,6 +1,6 @@
 ﻿using System;
 
-using DeliveryGo.Core.Singleton;
+using DeliveryGO.Core.Singleton;
 
 
 public class PagoConImpuesto : IPago

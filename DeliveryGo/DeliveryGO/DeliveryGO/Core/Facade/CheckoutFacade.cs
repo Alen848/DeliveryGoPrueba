@@ -1,7 +1,5 @@
-﻿using System;
-
+﻿using DeliveryGo.Core.Order;
 using DeliveryGO.Core.Command;
-using DeliveryGO.Core.Payment;
 using DeliveryGO.Core.Order;
 using DeliveryGO.Core.Strategy;
 
@@ -22,24 +20,30 @@ public class CheckoutFacade
 
     public void AgregarItem(string sku, string nombre, decimal precio, int cantidad)
     {
-        // Para simplificar, usamos directamente el CarritoPort
-        var carritoInterno = new Carrito();
-        var item = new Item { Sku = sku, Nombre = nombre, Precio = precio, Cantidad = cantidad };
-        var command = new AgregarItemCommand(carritoInterno, item);
+        // Obtener el carrito real del CarritoPort
+        var carritoReal = (_carrito as CarritoPort)?.CarritoInterno;
+        if (carritoReal == null) return;
+
+        var item = new Item(sku, nombre, precio, cantidad);
+        var command = new AgregarItemCommand(carritoReal, item);
         _carrito.Run(command);
     }
 
     public void CambiarCantidad(string sku, int cantidad)
     {
-        var carritoInterno = new Carrito();
-        var command = new SetCantidadCommand(carritoInterno, sku, cantidad);
+        var carritoReal = (_carrito as CarritoPort)?.CarritoInterno;
+        if (carritoReal == null) return;
+
+        var command = new SetCantidadCommand(carritoReal, sku, cantidad);
         _carrito.Run(command);
     }
 
     public void QuitarItem(string sku)
     {
-        var carritoInterno = new Carrito();
-        var command = new QuitarItemCommand(carritoInterno, sku);
+        var carritoReal = (_carrito as CarritoPort)?.CarritoInterno;
+        if (carritoReal == null) return;
+
+        var command = new QuitarItemCommand(carritoReal, sku);
         _carrito.Run(command);
     }
 
@@ -55,10 +59,11 @@ public class CheckoutFacade
         return subtotal + costoEnvio;
     }
 
+    // ... (los demás métodos se mantienen igual)
     public bool Pagar(string tipoPago, bool aplicarIVA, decimal? cupon = null)
     {
         var monto = CalcularTotal();
-
+        
         if (monto <= 0)
         {
             Console.WriteLine("Monto a pagar es 0, no se requiere pago");
@@ -93,14 +98,14 @@ public class CheckoutFacade
     public Pedido ConfirmarPedido(string direccion, string tipoPago)
     {
         var items = _carrito.GetItemsSnapshot();
-
+        
         if (!items.Any())
         {
             throw new InvalidOperationException("No se puede confirmar pedido: carrito vacío");
         }
 
         var builder = new PedidoBuilder();
-
+        
         var pedido = builder
             .ConItems(items.Select(i => (i.Sku, i.Nombre, i.Precio, i.Cantidad)))
             .ConDireccion(direccion)
@@ -113,7 +118,6 @@ public class CheckoutFacade
         Console.WriteLine($"- Total: ${pedido.Monto}");
         Console.WriteLine($"- Estado inicial: {pedido.Estado}");
 
-        // Simular workflow de estados
         SimularWorkflowPedido(pedido.Id);
 
         return pedido;
@@ -122,12 +126,12 @@ public class CheckoutFacade
     private void SimularWorkflowPedido(int pedidoId)
     {
         Thread.Sleep(800);
-        _pedidoService.CambiarEstado(pedidoId, EstadoPedido.Preparando);
-
+        _pedidoService.CambiarEstado(pedidoId, DeliveryGO.Core.Order.EstadoPedido.Preparando);
+        
         Thread.Sleep(1000);
-        _pedidoService.CambiarEstado(pedidoId, EstadoPedido.Enviado);
-
+        _pedidoService.CambiarEstado(pedidoId, DeliveryGO.Core.Order.EstadoPedido.Enviado);
+        
         Thread.Sleep(1200);
-        _pedidoService.CambiarEstado(pedidoId, EstadoPedido.Entregado);
+        _pedidoService.CambiarEstado(pedidoId, DeliveryGO.Core.Order.EstadoPedido.Entregado);
     }
 }

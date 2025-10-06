@@ -1,6 +1,7 @@
 ﻿using System;
 
-using DeliveryGo.Core.Command;
+using DeliveryGO.Core.Command;
+using DeliveryGO.Core.Order;
 
 namespace DeliveryGo.Core.Order;
 
@@ -14,4 +15,3 @@ public class Pedido
     public decimal Monto { get; set; }
 }
 
-public enum EstadoPedido { Recibido, Preparando, Enviado, Entregado }

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DeliveryGo.Config
+namespace DeliveryGO.Core.Singleton
 
 {
     public sealed class ConfigManager
@@ -12,7 +12,7 @@ namespace DeliveryGo.Config
 
         // Umbral para envío gratis
         public decimal EnvioGratisDesde { get; set; }
-
+        public decimal IVA { get; internal set; }
     }
 }
 
